@@ -20,6 +20,9 @@ try {
 }
 dbConnection();
 
+const authRoutes = require("./routes/authRoutes");
+app.use("/api", authRoutes);
+
 app.listen(port, ()=>{
     console.log(`Server is running at port ${port}`);
     
