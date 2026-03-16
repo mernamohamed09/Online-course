@@ -21,7 +21,14 @@ try {
 dbConnection();
 
 const authRoutes = require("./routes/authRoutes");
+const courseRoutes = require("./routes/courseRoutes");
+
 app.use("/api", authRoutes);
+app.use("/api/courses", courseRoutes);
+
+// app.get("/home", (req,res) => {
+//     res.send("test route")
+// })
 
 app.listen(port, ()=>{
     console.log(`Server is running at port ${port}`);

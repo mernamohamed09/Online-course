@@ -31,8 +31,8 @@ const registerSchema = joi.object({
     }),
 
   role: joi.string()
-    .valid('student', 'instructor', 'admin')
-    .default('student')
+    .valid("Student", "Instructor", "Admin")
+    .default('Student')
     .messages({
       'any.only': 'Role must be student, instructor, or admin',
     }), 
