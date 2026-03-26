@@ -27,7 +27,11 @@ instructor: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User", 
         required: true
-    }
+    },
+lessons: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Lesson"
+}]
 }, { timestamps: true });
 
 const Course = mongoose.model("Course", courseSchema);
