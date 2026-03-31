@@ -28,6 +28,10 @@ instructor: {
         ref: "User", 
         required: true
     },
+approvedBy: { 
+    type: mongoose.Schema.Types.ObjectId,
+     ref: "User"
+     },
 lessons: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Lesson"

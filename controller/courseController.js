@@ -1,5 +1,5 @@
 const Course = require("../models/Course");
-const { createCourseSchema, updateStatusSchema } = require("./validation/authValidate");
+const { createCourseSchema, updateStatusSchema } = require("./validation/courseValidation");
 
 // create course (Instructor)
 const createCourse = async (req, res) => {
@@ -22,7 +22,7 @@ const createCourse = async (req, res) => {
             description,
             price,
             status: "Pending",
-            instructor: req.user._id
+            instructor: req.user.id
         });
 
         res.status(201).json({

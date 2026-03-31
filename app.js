@@ -22,13 +22,15 @@ dbConnection();
 
 const authRoutes = require("./routes/authRoutes");
 const courseRoutes = require("./routes/courseRoutes");
+const lessonRoutes = require("./routes/lessonRoutes");
+const enrollmentRoutes = require("./routes/enrollmentRoute");
+
 
 app.use("/api", authRoutes);
-app.use("/api/courses", courseRoutes);
+app.use("/api", courseRoutes);
+app.use("/api", lessonRoutes);
+app.use("/api", enrollmentRoutes);
 
-// app.get("/home", (req,res) => {
-//     res.send("test route")
-// })
 
 app.listen(port, ()=>{
     console.log(`Server is running at port ${port}`);
